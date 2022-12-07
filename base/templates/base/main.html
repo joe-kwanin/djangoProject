@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Try</title>
+    <meta name="viewport" charset="UTF-8" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../static/styles.css" />
+    <link rel="stylesheet" href="../static/nav.css" />
+
+
+
+    <body onload="slider()">
+
+        <div class="banner">
+
+            <div class="slider">
+                <img src="images/p5.jpg" id="slideImage" alt="Slide Image">
+                <div class="overlay">
+
+                    <div class="navbar">
+                        <div class="logo">
+                            <a href="main.html">
+                                <h1>Poultry-Ghana</h1>
+                            </a>
+
+                        </div>
+                        <div class="container">
+                            <nav>
+                                <ul id="MenuItems">
+                                    <li><a href="main.html">Home</a></li>
+                                    <li><a href="#">About Us</a></li>
+                                    <li><a href="#">Services</a></li>
+                                    <li><a href="#">Contact Us</a></li>
+
+                                </ul>
+
+                            </nav>
+
+
+                            <a class="login-btn" href="{% url 'login' %}">Sign in</a>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <div class="contentOne">
+                            <div class="text-box text-box1">
+                                <h1>We make poultry easy</h1>
+                                <span></span>
+                                <p>
+                                    Get connected to our app and there you go; every aspect of the poultry has been digitalized and at a click you are there
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="contentTwo">
+                            <div class="content-Two-box-One">
+                                <h1>POULTRY MANAGEMENT MADE EASY</h1>
+                                <h3>By connecting to poultry Ghana your poultry business is made easy</h3>
+
+                                <div>
+                                    <!--button type="button" class="btn1">SIGN IN</!--button-->
+                                    <a href="login.html"><button type="button" class="btn2">REGISTER</button></a>
+                                </div>
+                            </div>
+                            <div class="content-Two-box-Two">
+                                <a href="login.html"><img src="images/user.png" id="user" alt="User Login Link"></a>
+                                <a href="login.html"><img src="images/poultry-manager.png" id="poultry-manager" alt="Poultry Manager Login Link"></a>
+                                <a href="login.html"><img src="images/veterinarian.png" id="veterinarian" alt="Veterinarian Login Link"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            var slideImage = document.getElementById("slideImage");
+            var images = new Array(
+                "images/p1.jpg",
+                "images/p5.jpg",
+                "images/bg-2.jpg",
+                "images/p2.jpg",
+                "images/p3.jpg",
+                "images/p41.jpg",
+                "images/p6.jpg",
+                "images/p9.jpg",
+                "images/p9.webp"
+            );
+
+            var len = images.length;
+            var i = 0;
+
+            function slider() {
+
+                if (i > len - 1) {
+                    i = 0;
+                }
+                setTimeout("slider()", 30000);
+                slideImage.src = images[i];
+                i++;
+
+            }
+        </script>
+    </body>
+
+</html>

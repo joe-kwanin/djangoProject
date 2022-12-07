@@ -1,0 +1,75 @@
+{% extends 'basetemp.html' %}
+{% block content %}
+      <div class="main-panel">        
+        <div class="content-wrapper">
+          <div class="row">
+
+            <div class="col-12 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Add Records</h4>
+                  <p class="card-description">
+                  </p>
+                  <form class="forms-sample" method="post" action="{% url 'records' %}" enctype="multipart/form-data">
+                      {% csrf_token %}
+                    <div class="form-group">
+                      <label for="examplePen">Pen Number</label>
+                      <input type="text" class="form-control" id="exampleInputName1" placeholder="Pen No" name="pen" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="examplePro">Production Type</label>
+                        <input type="text" class="form-control" id="examplePro" placeholder="Production Type" name="pro" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleAge">Age</label>
+                        <input type="number" class="form-control" id="exampleAge" placeholder="Age(WKS)" name="age" required>
+                    </div>
+                  <div class="form-group">
+                        <label for="exampleBirds">Number of Birds</label>
+                        <input type="number" class="form-control" id="exampleBirds" placeholder="Number of Birds" name="birds" required>
+                  </div>
+                  <div class="form-group">
+                        <label for="exampleFeed">Feed</label>
+                        <input type="number" class="form-control" id="exampleFeed" placeholder="Feed(Kg)" name="feed" required>
+                    </div>
+                  <div class="form-group">
+                        <label for="exampleEgg">Egg Production</label>
+                        <input type="number" class="form-control" id="exampleEgg" placeholder="Egg Production(number)" name="egg" required>
+                    </div>
+                  <div class="form-group">
+                        <label for="exampleStock">total Stock</label>
+                        <input type="number" class="form-control" id="exampleStock" placeholder="Total Stock" name="stock" required>
+                    </div>
+                  <div class="form-group">
+                        <label for="exampleMedication">Medication</label>
+                        <input type="text" class="form-control" id="exampleMedication" placeholder="medication" name="med" required>
+                    </div>
+                  <div class="form-group">
+                        <label for="exampleRemarks">Remarks</label>
+                      <textarea class="form-control" id="exampleRemarks" rows="4" name="remarks" required></textarea>
+                    </div>
+{#                    <div class="form-group">#}
+{#                      <label>Report File</label>#}
+{#                      <input type="file" name="img" class="file-upload-default">#}
+{#                      <div class="input-group col-xs-12">#}
+{#                        <input type="text" class="form-control file-upload-info" disabled placeholder="Upload File" required>#}
+{#                        <span class="input-group-append">#}
+{#                          <button class="file-upload-browse btn btn-primary" type="button">Upload</button>#}
+{#                        </span>#}
+{#                      </div>#}
+{#                    </div>#}
+                      <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                    <button type="reset" class="btn btn-light">Cancel</button>
+                  </form>
+{#                  <div style="position:absolute; bottom:0; left:0; margin-left:150px; margin-bottom:20px">#}
+{#                  <a href="/products/"><button class="btn btn-light">Cancel</button></a>#}
+{#                  </div>#}
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+{% endblock %}
+      

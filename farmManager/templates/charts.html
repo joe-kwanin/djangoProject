@@ -1,0 +1,128 @@
+{% extends 'basetemp.html' %}
+{% block content %}
+
+            <div class="container">
+{#            <p>[{% for d in date %}{{ d }}{% endfor %}]</p>#}
+            <div class="col-md-8">
+                <canvas id="mychart1" width="300px" height="200px"></canvas>
+                <canvas id="mychart" width="300px" height="200px"></canvas>
+            </div>
+
+            </div>
+            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+{#            <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js"></script>#}
+            <script type="text/javascript">
+                const labels = [{% for d in date %} '{{ d }}', {% endfor %}];
+                const data = {
+                  labels: labels,
+                  datasets: [
+                    {
+                      label: 'Number of Eggs',
+                      data: [{% for e in no_eggs %}{{ e }}{% endfor %}],
+                      backgroundColor: ['rgba(25, 216, 104, 1)'],
+                    },
+                    {
+                      label: 'Total Stock',
+                      data: [{% for t in total_stock %}{{ t }}{% endfor %}],
+                      backgroundColor: ['rgba(55, 86, 10, 1)'],
+                    },
+                    {
+                      label: 'Number of Birds',
+                      data: [{% for b in no_birds %}{{ b }}{% endfor %}],
+                      backgroundColor: ['rgba(15, 15, 50, 1)'],
+                    },
+                    {
+                      label: 'Feed(Kg)',
+                      data: [{% for f in feed %}{{ f }}{% endfor %}],
+                      backgroundColor: ['rgba(255, 246, 104, 1)'],
+                    },
+                      {
+                      label: 'Age(Wks)',
+                      data: [{% for a in age %}{{ a }}{% endfor %}],
+                      backgroundColor: ['rgba(255, 26, 104, 1)'],
+                    }
+                  ]
+                };
+                const config = {
+                    type: 'line',
+                    data: data,
+                      options: {
+                        responsive: true,
+                        plugins: {
+                          legend: {
+                            position: 'top',
+                          },
+                          title: {
+                            display: true,
+                            text: 'Records Line Graph'
+                          }
+                        }
+                      },
+                    };
+                let ctx = new Chart(document.getElementById('mychart1'), config);
+            </script>
+    <div>
+                </div>
+
+            </div>
+            <script type="text/javascript">
+                const labels1 = [{% for d in date %} '{{ d }}', {% endfor %}];
+                const data1 = {
+                  labels: labels1,
+                  datasets: [
+                    {
+                      label: 'Number of Eggs',
+                      data: [{% for e in no_eggs %}{{ e }}{% endfor %}],
+                      backgroundColor: ['rgba(25, 216, 104, 1)'],
+                    },
+                    {
+                      label: 'Total Stock',
+                      data: [{% for t in total_stock %}{{ t }}{% endfor %}],
+                      backgroundColor: ['rgba(55, 86, 10, 1)'],
+                    },
+                    {
+                      label: 'Number of Birds',
+                      data: [{% for b in no_birds %}{{ b }}{% endfor %}],
+                        backgroundColor: ['rgba(15, 15, 50, 1)'],
+                    },
+                    {
+                      label: 'Feed(Kg)',
+                      data: [{% for f in feed %}{{ f }}{% endfor %}],
+                        backgroundColor: ['rgba(255, 246, 104, 1)'],
+                    },
+                      {
+                      label: 'Age(Wks)',
+                      data: [{% for a in age %}{{ a }}{% endfor %}],
+                          backgroundColor: ['rgba(255, 26, 104, 1)'],
+                    }
+                  ]
+                };
+                const config1 = {
+                    type: 'bar',
+                    data: data1,
+                      options: {
+                        responsive: true,
+                          scale:{
+                            x:{
+                                stacked:true
+                            },
+                            y:{
+                                stacked:true
+                            }
+                          },
+                        plugins: {
+                          legend: {
+                            position: 'top',
+                          },
+                          title: {
+                            display: true,
+                            text: 'Records Line Graph'
+                          }
+                        }
+                      },
+                    };
+                let chary = new Chart(document.getElementById('mychart'), config1);
+            </script>
+
+{% endblock %}
+      

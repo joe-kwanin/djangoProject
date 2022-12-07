@@ -1,0 +1,215 @@
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        
+        .banner {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+        
+        .slider {
+            display: flex;
+            height: 100vh;
+            width: 100%;
+            top: 0;
+            overflow: hidden;
+        }
+        
+        #slideImage {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            animation: zoom-out 31s linear infinite;
+        }
+        
+        @keyframes zoom-out {
+            0% {
+                transform: scale(1.8);
+            }
+            25% {
+                transform: scale(1.6);
+            }
+            50% {
+                transform: scale(1.4);
+            }
+            75% {
+                transform: scale(1.2);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        
+        .overlay {
+            width: 100%;
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.75));
+            display: flex;
+            flex-direction: column;
+            position: fixed;
+            top: 0;
+        }
+        
+        .content {
+            display: flex;
+            width: 100%;
+            height: 100vh;
+        }
+        
+        .contentOne {
+            display: flex;
+            flex-direction: column;
+            width: 40%;
+        }
+        
+        .text-box {
+            width: 80%;
+            display: flex;
+            position: relative;
+            top: 40%;
+            padding-left: 6%;
+            color: #ffff;
+            animation: text-up 30s linear infinite;
+            transform: translateY(700px);
+        }
+        
+        .text-box h1 {
+            margin-bottom: 20px;
+        }
+        
+        .text-box p {
+            font-size: 17px;
+            line-height: 18px;
+            margin-top: 60px;
+        }
+        
+        .text-box span {
+            background: red;
+            height: 1%;
+            width: 33%;
+            position: absolute;
+            padding-left: 0;
+        }
+        
+        @keyframes text-up {
+            10% {
+                transform: translateY(0px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
+        
+        .text-box1 {
+            animation-delay: 0s;
+        }
+        
+        .contentTwo {
+            display: flex;
+            flex-direction: column;
+            width: 60%;
+            height: 100vh;
+        }
+        
+        .content-Two-box-One {
+            text-align: center;
+            color: #fff;
+            width: 80%;
+            margin-top: 15%;
+            margin-left: 3%;
+        }
+        
+        .content-Two-box-One h1 {
+            font-size: 30px;
+        }
+        
+        .content-Two-box-One h3 {
+            margin: 40px auto 12%;
+            font-weight: 100;
+            line-height: 20px;
+        }
+        
+        .btn1,
+        .btn2 {
+            width: 25%;
+            padding: 15px 0;
+            text-align: center;
+            margin: 0 10px;
+            border-radius: 25px;
+            font-weight: bold;
+            border: 2px solid #A153A0;
+            background: #A153A0;
+            color: #fff;
+            cursor: pointer;
+            transition: 0.5s;
+        }
+        
+        .btn1:hover {
+            background: transparent;
+            border: 2px solid #fff;
+        }
+        
+        .btn2 {
+            border: 2px solid #fff;
+            background: transparent;
+        }
+        
+        .btn2:hover {
+            border: 2px solid #A153A0;
+            background: #A153A0;
+        }
+        
+        .content-Two-box-Two {
+            text-align: center;
+            color: #fff;
+            margin-top: 6%;
+            margin-left: 3%;
+            display: block;
+            width: 80%;
+        }
+        
+        .content-Two-box-Two img {
+            width: 10%;
+            display: inline-block;
+            align-items: center;
+            margin-left: 15%;
+            margin-top: 8%;
+        }
+        
+        #user:hover {
+            background: rgba(255, 255, 255, 1)
+        }
+        
+        #poultry-manager:hover {
+            background: white;
+        }
+        
+        #veterinarian:hover {
+            background: rgba(255, 255, 255, 1)
+        }
+        
+        #user {
+            margin: 0;
+            background: rgba(201, 158, 199, 0.2);
+            border-radius: 100px;
+            width: 16%;
+        }
+        
+        #veterinarian {
+            background: rgba(201, 158, 199, 0.2);
+            border-radius: 100px;
+            width: 16%;
+        }
+        
+        #poultry-manager {
+            background: rgba(201, 158, 199, 0.2);
+            border-radius: 100px;
+            width: 15%;
+            border-style: solid;
+            border-color: #A153A0;
+        }
